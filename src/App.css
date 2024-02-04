@@ -3,6 +3,13 @@
   padding: 0;
 }
 
+body {
+  overflow-y: scroll;
+}
+
+#text {
+  display: none;
+}
 .open {
   display: flex;
 }
@@ -27,15 +34,8 @@
   justify-content: center;
 }
 
-.box-navbar {
-  width: 100vw;
-  display: inline-flex;
-  justify-content: center;
-}
-
 li {
   list-style-type: none;
-  margin: 1rem;
 }
 
 a {

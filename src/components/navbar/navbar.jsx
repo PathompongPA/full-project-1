@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getCookie } from "../../utilities";
+import "./navbar.css";
 
 export default function Navbar() {
   async function handleOnClickLogout() {
@@ -13,26 +14,26 @@ export default function Navbar() {
 
   return (
     <ul className="box-navbar">
-      <li>
+      <li className="title-navbar">
         <Link to={""}>Home</Link>
       </li>
-      <li>
+      <li className="title-navbar">
         <Link to={"/about"}>About</Link>
       </li>
-      <li>
+      <li className="title-navbar">
         <Link to={"/product"}>Product</Link>
       </li>
       {getCookie() ? (
         <>
-          <li>
+          <li className="title-navbar">
             <Link to={"/cart"}>cart</Link>
           </li>
-          <li>
+          <li className="title-navbar">
             <Link onClick={handleOnClickLogout}>Logout</Link>
           </li>
         </>
       ) : (
-        <li>
+        <li className="title-navbar">
           <Link to={"/login"}>Login</Link>
         </li>
       )}

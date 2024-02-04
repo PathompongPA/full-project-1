@@ -1,0 +1,26 @@
+* {
+  /* border: 1px solid black; */
+}
+.skeleton {
+  margin: 1rem;
+}
+.box-card-skeleton {
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 0.25rem;
+  display: inline-block;
+  margin: 0.25rem;
+}
+.box-product {
+  /* border: 1px solid rgb(0, 0, 0); */
+  margin-top: 1rem;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(6, 160px);
+  justify-content: center;
+}
+.image-product {
+  object-fit: cover;
+}
+.contain-product {
+  width: 150px;
+}

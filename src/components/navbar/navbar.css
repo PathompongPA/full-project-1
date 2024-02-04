@@ -1,0 +1,8 @@
+.box-navbar {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+.title-navbar {
+  padding: 1rem;
+}
