@@ -15,7 +15,7 @@
   margin-top: 1rem;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(6, 160px);
+  grid-template-columns: repeat(5, 160px);
   justify-content: center;
 }
 .image-product {

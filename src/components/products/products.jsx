@@ -4,6 +4,7 @@ import { FetchDate, createElementId } from "../../utilities";
 import { Context } from "../../App";
 import Skeleton from "react-loading-skeleton";
 import Category from "../categorys/category";
+import { Link } from "react-router-dom";
 
 export default function Products() {
   const [state, dispatch] = useContext(Context);
@@ -12,18 +13,11 @@ export default function Products() {
 
   useEffect(() => {
     if (state.listProduct === undefined) {
-      // createElementId("body").classList.toggle("disableScroll");
       FetchDate("https://dummyjson.com/products").then((result) => {
         setTimeout(() => {
           dispatch({ type: "setListProduct", payload: result.products });
-        }, 2000);
-        setTimeout(() => {
-          // createElementId("box-simple-loading").classList.toggle("close");
-          // createElementId("body").classList.toggle("disableScroll");
-        }, 1500);
+        }, 1000);
       });
-    } else {
-      // createElementId("box-simple-loading").classList.toggle("close");
     }
   }, []);
 
@@ -33,9 +27,8 @@ export default function Products() {
     price = <Skeleton />,
     rating = <Skeleton />
   ) {
-    console.log(listProduct);
     return (
-      <div className="box-card-skeleton box">
+      <Link className="box-card-skeleton box" to={"/product/"}>
         <p>
           {listProduct === undefined ? (
             <Skeleton width={150} height={150} />
@@ -54,13 +47,13 @@ export default function Products() {
           <span className="contain-product">{price}</span>
         </p>
         <span className="contain-product">{rating}</span>
-      </div>
+      </Link>
     );
   }
 
   const cardNoData = () => {
     const result = [];
-    for (let index = 0; index < 18; index++) {
+    for (let index = 0; index < 10; index++) {
       console.log("no data : ", index);
       result.push(cardProduct());
       setTimeout(() => {}, 500);
@@ -76,7 +69,6 @@ export default function Products() {
 
   return (
     <>
-      <Category />
       <div className="box-product">
         {listProduct === undefined ? cardNoData() : cardHaveData()}
       </div>

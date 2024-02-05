@@ -1,0 +1,15 @@
+.box-category {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  grid-gap: 0.5rem;
+}
+.box-list-category {
+  border: 2px solid rgb(230, 230, 230);
+  /* border-radius: 0.5rem; */
+  /* padding: 0.25rem; */
+  align-items: center;
+}
+.list-category {
+  text-align: center;
+  width: 100%;
+}

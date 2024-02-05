@@ -1,13 +1,6 @@
 import { Link, createBrowserRouter } from "react-router-dom";
-import {
-  About,
-  Login,
-  Products,
-  Register,
-  SimpleLoading,
-  SkeletonLoading,
-} from "./components";
-import { HomeLayout } from "./layouts";
+import { About, Login, Products, Register, SimpleLoading } from "./components";
+import { HomeLayout, ProductLayout } from "./layouts";
 import { getCookie } from "./utilities";
 
 export const MainRoute = createBrowserRouter([
@@ -23,8 +16,8 @@ export const MainRoute = createBrowserRouter([
   },
   {
     path: "",
-    element: <Products />,
-    children: [{ path: "/product", element: <Products /> }],
+    element: <ProductLayout />,
+    children: [{ path: "/products", element: <Products /> }],
   },
 
   { path: getCookie() ? "" : "/register", element: <Register /> },

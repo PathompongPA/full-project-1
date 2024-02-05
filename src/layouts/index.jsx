@@ -1,3 +1,4 @@
 import HomeLayout from "./homelayout/homelayout";
+import ProductLayout from "./productLayout/productLayout";
 
-export { HomeLayout };
+export { ProductLayout, HomeLayout };

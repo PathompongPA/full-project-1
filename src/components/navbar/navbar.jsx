@@ -14,29 +14,43 @@ export default function Navbar() {
 
   return (
     <ul className="box-navbar">
-      <li className="title-navbar">
-        <Link to={""}>Home</Link>
-      </li>
-      <li className="title-navbar">
-        <Link to={"/about"}>About</Link>
-      </li>
-      <li className="title-navbar">
-        <Link to={"/product"}>Product</Link>
-      </li>
-      {getCookie() ? (
-        <>
-          <li className="title-navbar">
-            <Link to={"/cart"}>cart</Link>
-          </li>
-          <li className="title-navbar">
-            <Link onClick={handleOnClickLogout}>Logout</Link>
-          </li>
-        </>
-      ) : (
+      <div className="navbar">
         <li className="title-navbar">
-          <Link to={"/login"}>Login</Link>
+          <Link className="title" to={""}>
+            Home
+          </Link>
         </li>
-      )}
+        <li className="title-navbar">
+          <Link className="title" to={"/about"}>
+            About
+          </Link>
+        </li>
+        <li className="title-navbar">
+          <Link className="title" to={"/products"}>
+            Product
+          </Link>
+        </li>
+        {getCookie() ? (
+          <>
+            <li className="title-navbar">
+              <Link className="title" to={"/cart"}>
+                cart
+              </Link>
+            </li>
+            <li className="title-navbar">
+              <Link className="title" onClick={handleOnClickLogout}>
+                Logout
+              </Link>
+            </li>
+          </>
+        ) : (
+          <li className="title-navbar">
+            <Link className="title" to={"/login"}>
+              Login
+            </Link>
+          </li>
+        )}
+      </div>
     </ul>
   );
 }
